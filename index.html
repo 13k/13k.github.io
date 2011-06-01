@@ -1,1 +1,166 @@
-13k
+<!-- Ghetto Slides by Joe Walnes, http://joewalnes.com -->
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:light,lightitalic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Crimson+Text:regular,regularitalic' rel='stylesheet' type='text/css'>
+
+    <style>
+      body {
+        color: #000;
+        background-color: #efefef;
+        font-family: 'Ubuntu', arial, sans-serif;
+        font-size: 40px;
+        -webkit-user-select: none;
+      }
+      
+      #loading {
+        margin-top: 150px;
+        padding: 30px 0;
+        background-color: #dedede;
+        text-align: center;
+      }
+      
+      #presentation {
+        display: none;
+      }
+
+      section {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding-top: 200px;
+        color: #333;
+        text-shadow: #CDCDCD 1px 1px 1px;
+      }
+      
+      em {
+        color: #31694B;
+        font-family: 'Crimson Text', serif;
+        font-size: 150%;
+        text-shadow: #fff 2px 2px 1px;
+      }
+      
+      a {
+        color: #05AB52;
+        text-decoration: none;
+      }
+      
+      strong {
+        display: block;
+        color: #3333ff;
+        font-size: 200%;
+      }
+
+      .subtitle {
+        font-size: small;
+        font-style: italic;
+      }
+
+      .illustrations {
+        margin-top: 15px;
+        height: 140px;
+        background-color: #dedede;
+      }
+      
+      .giant-box {
+        display: block;
+        margin: 0 auto;
+        font-size: 150px;
+        font-family: 'Crimson Text';
+        background-color: #fff;
+        color: #222;
+        text-shadow: #CDCDCD 2px 2px 2px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+        -moz-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+        box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+      }
+      
+      .giant-text {
+        width: 75%;
+      }
+      
+      .giant-char {
+        width: 150px;
+      }
+    </style>
+ 
+    <title>Kiyoshi '13k' Murata</title>
+    
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#loading").hide();
+        $("#presentation").show();
+        
+        var currentSection = $('section').first().fadeIn();
+        
+        $('body').click(function(ev) {
+          if ($(ev.target).closest('.clickable').length > 0)
+            return true;
+          
+          currentSection = currentSection.fadeOut().next('section').fadeIn();
+        });
+        
+        $('a.new-window').attr('target', '_blank');
+      });
+    </script>
+  </head>
+  
+  <body>
+    <div id="loading">
+      <span class="giant-box giant-text">loading</span>
+    </div>
+    
+    <div id="presentation">
+      <section>  
+        <p>Hi! I'm <em>Kiyoshi</em></p>
+        
+        <p class="subtitle">This website is a little presentation. You can click anywhere on the page and see what's next</p>
+
+        <div class="illustrations">
+          <a href="http://br.linkedin.com/in/kmurata" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/mysitemyway/blue-jeans-social-media/128/linkedin-icon.png"/></a>
+          <a href="http://twitter.com/koffeebytes" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/mysitemyway/blue-jeans-social-media/128/twitter-icon.png"/></a>
+          <a href="mailto:kbmurata@gmail.com" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/mysitemyway/blue-jeans-social-media/128/gmail-icon.png"/></a>
+        </div>
+      </section>
+      
+      <section>
+        <p>I write <em>code</em></p>
+        
+        <div class="illustrations">
+        </div>
+      </section>
+      
+      <section>
+        <p>I write <em>ideas</em></p>
+        
+        <div class="illustrations">
+        </div>
+      </section>
+      
+      <section>
+        <p>I write <em>words</em></p>
+        
+        <p class="subtitle">(in portuguese)</p>
+        
+        <div class="illustrations">
+          <a href="http://linhareta.net">Linha Reta</a>
+        </div>      
+      </section>
+
+      <section>
+        <a href="#" onclick="location.reload(); return false" class="giant-box giant-char">;</a>
+      </section>
+    </div>
+  </body>
+</html>
