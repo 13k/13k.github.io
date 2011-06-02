@@ -46,6 +46,7 @@
         font-family: 'Crimson Text', serif;
         font-size: 150%;
         text-shadow: #fff 2px 2px 1px;
+        text-transform: uppercase;
       }
       
       a {
@@ -102,13 +103,16 @@
         $("#loading").hide();
         $("#presentation").show();
         
-        var currentSection = $('section').first().fadeIn();
-        
+        var current = $('section:first').fadeIn();
+
         $('body').click(function(ev) {
           if ($(ev.target).closest('.clickable').length > 0)
             return true;
-          
-          currentSection = currentSection.fadeOut().next('section').fadeIn();
+
+          current.fadeOut();
+          current = (current.is(':last-child') ?
+            current.prevAll(':first-child') :
+            current.next('section')).fadeIn();
         });
         
         $('a.new-window').attr('target', '_blank');
@@ -122,15 +126,14 @@
     </div>
     
     <div id="presentation">
-      <section>  
+      <section>
         <p>Hi! I'm <em>Kiyoshi</em></p>
         
         <p class="subtitle">This website is a little presentation. You can click anywhere on the page and see what's next</p>
 
         <div class="illustrations">
-          <a href="http://br.linkedin.com/in/kmurata" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/mysitemyway/blue-jeans-social-media/128/linkedin-icon.png"/></a>
-          <a href="http://twitter.com/koffeebytes" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/mysitemyway/blue-jeans-social-media/128/twitter-icon.png"/></a>
-          <a href="mailto:kbmurata@gmail.com" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/mysitemyway/blue-jeans-social-media/128/gmail-icon.png"/></a>
+          <a href="http://br.linkedin.com/in/kmurata" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/creativenerds/wooden-social/128/linkedin-icon.png"/></a>
+          <a href="mailto:kbmurata@gmail.com" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/creativenerds/wooden-social/128/at-icon.png"/></a>
         </div>
       </section>
       
@@ -138,13 +141,16 @@
         <p>I write <em>code</em></p>
         
         <div class="illustrations">
+          <a href="http://linhareta.net" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/creativenerds/wooden-social/128/rss-icon.png"/></a>
         </div>
       </section>
       
       <section>
-        <p>I write <em>ideas</em></p>
-        
+        <p>I talk <em>ideas</em></p>
+
         <div class="illustrations">
+          <a href="http://monospaced-thoughts.com" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/creativenerds/wooden-social/128/tech-icon.png"/></a>
+          <a href="http://twitter.com/koffeebytes" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/creativenerds/wooden-social/128/twitter-icon.png"/></a>
         </div>
       </section>
       
@@ -154,12 +160,14 @@
         <p class="subtitle">(in portuguese)</p>
         
         <div class="illustrations">
-          <a href="http://linhareta.net">Linha Reta</a>
+          <a href="http://linhareta.net" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/creativenerds/wooden-social/128/rss-icon.png"/></a>
         </div>      
       </section>
 
       <section>
-        <a href="#" onclick="location.reload(); return false" class="giant-box giant-char">;</a>
+        <a href="#" onclick="location.reload(); return false" class="giant-box giant-char clickable">;</a>
+        
+        <p class="subtitle">(End of line. Will it compile?)</p>
       </section>
     </div>
   </body>
