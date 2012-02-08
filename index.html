@@ -1,174 +1,83 @@
 <!-- Ghetto Slides by Joe Walnes, http://joewalnes.com -->
 
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
   <head>
-    <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
-
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:light,lightitalic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Crimson+Text:regular,regularitalic' rel='stylesheet' type='text/css'>
 
     <style>
       body {
         color: #000;
-        background-color: #efefef;
-        font-family: 'Ubuntu', arial, sans-serif;
-        font-size: 40px;
-        -webkit-user-select: none;
-      }
-      
-      #loading {
-        margin-top: 150px;
-        padding: 30px 0;
-        background-color: #dedede;
-        text-align: center;
-      }
-      
-      #presentation {
-        display: none;
-      }
-
-      section {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        padding-top: 200px;
-        color: #333;
-        text-shadow: #CDCDCD 1px 1px 1px;
-      }
-      
-      em {
-        color: #31694B;
-        font-family: 'Crimson Text', serif;
-        font-size: 150%;
-        text-shadow: #fff 2px 2px 1px;
-        text-transform: uppercase;
-      }
-      
-      a {
-        color: #05AB52;
-        text-decoration: none;
-      }
-      
-      strong {
-        display: block;
-        color: #3333ff;
-        font-size: 200%;
-      }
-
-      .subtitle {
-        font-size: small;
-        font-style: italic;
-      }
-
-      .illustrations {
-        margin-top: 15px;
-        height: 140px;
-        background-color: #dedede;
-      }
-      
-      .giant-box {
-        display: block;
-        margin: 0 auto;
-        font-size: 150px;
-        font-family: 'Crimson Text';
         background-color: #fff;
-        color: #222;
-        text-shadow: #CDCDCD 2px 2px 2px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        -webkit-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
-        -moz-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
-        box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+        font-family: 'Ubuntu', arial, sans-serif;
+        text-align: center;
+        padding-top: 2em;
+        text-shadow: 1px 1px #ccc;
       }
       
-      .giant-text {
-        width: 75%;
+      h1 {
+        font-size: 3em;
       }
       
-      .giant-char {
-        width: 150px;
+      h1 span {
+        font-style: italic;
+        quotes: '“' '”';
+      }
+      
+      h1 span:before {
+        content: open-quote;
+      }
+      
+      h1 span:after {
+        content: close-quote;
+      }
+      
+      footer {
+        width: 100%;
+        position: fixed;
+        bottom: 2em;
+        font: italic 1em/2em serif;
+        text-align: center;
       }
     </style>
  
-    <title>Kiyoshi '13k' Murata</title>
+    <title>Kiyoshi “13k” Murata</title>
     
     <script type="text/javascript">
-      $(document).ready(function() {
-        $("#loading").hide();
-        $("#presentation").show();
-        
-        var current = $('section:first').fadeIn();
+      // adapted from http://practicalcryptography.com/ciphers/caesar-cipher/
+      function CaesarCipher() {
+        this.encode = function(plaintext, shift) {
+          var re = /[a-z]/, ciphertext = "";
+          for (i=0; i < plaintext.length; i++) {
+            if (re.test(plaintext.charAt(i))) ciphertext += String.fromCharCode((plaintext.charCodeAt(i) - 97 + shift)%26 + 97); 
+            else ciphertext += plaintext.charAt(i); 
+          }
+          return ciphertext;
+        }
 
-        $('body').click(function(ev) {
-          if ($(ev.target).closest('.clickable').length > 0)
-            return true;
+        this.decode = function(ciphertext, shift) {
+          var plaintext = "", re = /[a-z]/;
+          for (i=0; i<ciphertext.length; i++) {
+            if (re.test(ciphertext.charAt(i))) plaintext += String.fromCharCode((ciphertext.charCodeAt(i) - 97 + 26 - shift)%26 + 97); 
+            else plaintext += ciphertext.charAt(i); 
+          }
+          return plaintext;
+        }
+      }
 
-          current.fadeOut();
-          current = (current.is(':last-child') ?
-            current.prevAll(':first-child') :
-            current.next('section')).fadeIn();
-        });
-        
-        $('a.new-window').attr('target', '_blank');
-      });
+      function fillEmail() {
+        document.getElementById("email").innerHTML = (new CaesarCipher().decode("13x@yvaunergn.arg", 13));
+      }
     </script>
   </head>
-  
-  <body>
-    <div id="loading">
-      <span class="giant-box giant-text">loading</span>
-    </div>
-    
-    <div id="presentation">
-      <section>
-        <p>Hi! I'm <em>Kiyoshi</em></p>
-        
-        <p class="subtitle">This website is a little presentation. You can click anywhere on the page and see what's next</p>
 
-        <div class="illustrations">
-          <a href="http://br.linkedin.com/in/kmurata" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/creativenerds/wooden-social/128/linkedin-icon.png"/></a>
-          <a href="mailto:kbmurata@gmail.com" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/creativenerds/wooden-social/128/at-icon.png"/></a>
-        </div>
-      </section>
-      
-      <section>
-        <p>I write <em>code</em></p>
-        
-        <div class="illustrations">
-          <a href="http://linhareta.net" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/creativenerds/wooden-social/128/rss-icon.png"/></a>
-        </div>
-      </section>
-      
-      <section>
-        <p>I talk <em>ideas</em></p>
-
-        <div class="illustrations">
-          <a href="http://monospaced-thoughts.com" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/creativenerds/wooden-social/128/tech-icon.png"/></a>
-          <a href="http://twitter.com/koffeebytes" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/creativenerds/wooden-social/128/twitter-icon.png"/></a>
-        </div>
-      </section>
-      
-      <section>
-        <p>I write <em>words</em></p>
-        
-        <p class="subtitle">(in portuguese)</p>
-        
-        <div class="illustrations">
-          <a href="http://linhareta.net" class="clickable new-window"><img src="http://icons.iconarchive.com/icons/creativenerds/wooden-social/128/rss-icon.png"/></a>
-        </div>      
-      </section>
-
-      <section>
-        <a href="#" onclick="location.reload(); return false" class="giant-box giant-char clickable">;</a>
-        
-        <p class="subtitle">(End of line. Will it compile?)</p>
-      </section>
-    </div>
+  <body onload="fillEmail()">
+    <h1>Kiyoshi <span>13k</span> Murata</h1>
+    <p id="email"></p>
+    <noscript>
+      <p>Please note that email addresses on this site are protected to avoid abuse by spammers.
+      You will need a JavaScript-enabled browser to see the email addresses.</p>
+    </noscript>
+    <footer><q>Libertas Quae Sera Tamen</q></footer>
   </body>
 </html>
