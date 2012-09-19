@@ -1,0 +1,175 @@
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+html {
+  background: url('../images/bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+	   -moz-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+}
+
+body {
+  min-width: 960px;
+  font-family: 'Ubuntu', arial, sans-serif;
+}
+
+body:before {
+  content: '';
+  position: fixed;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  z-index: 100;
+
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.8);
+     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.8);
+       -o-box-shadow: 0 0 10px rgba(0,0,0,0.8);
+          box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.quoted {
+  quotes: '\201c' '\201d';
+}
+
+.quoted:before {
+  content: open-quote;
+}
+
+.quoted:after {
+  content: close-quote;
+}
+
+#bar {
+  position: absolute;
+  right: 100px;
+  width: 300px;
+  height: 100%;
+  color: #fefefe;
+  text-shadow: 1px 1px rgba(0,0,0,0.95);
+  background-color: rgba(0,0,0,0.5);
+}
+
+/*
+#bar:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 10px;
+  height: 100%;
+
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.8);
+     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.8);
+       -o-box-shadow: 0 0 10px rgba(0,0,0,0.8);
+          box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+*/
+
+#bar .sep {
+  width: 100%;
+  height: 3px;
+  background-color: rgba(255,255,255,0.25);
+}
+
+#bar .spacer {
+  height: 75px;
+}
+
+#info {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5);
+}
+
+#info h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 75px;
+  letter-spacing: 1px;
+}
+
+#info h1 span {
+  color: #d33;
+}
+
+#email {
+  width: 100%;
+  margin: 0 auto;
+  color: #333;
+  font: 18px/34px 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+  text-shadow: 1px 1px rgba(0,0,0,0.25);
+  text-align: center;
+  background-color: rgba(200,200,180,0.5);
+}
+
+#menu {
+  width: 100%;
+  padding: 1em 0;
+  background-color: rgba(255,255,255,0.5);
+  -webkit-box-shadow: inset 0 0 10px -2px rgba(0,0,0,0.8);
+}
+
+#menu > ul {
+  width: 87px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#menu > ul > li {
+  float: left;
+  margin: 5px 0 0 5px;
+}
+
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: transparent url('../images/icons.png') no-repeat;
+}
+
+.icon.github {
+  background-position: 0 0;
+}
+
+.icon.linkedin {
+  background-position: -25px 0;
+}
+
+.icon.skype {
+  background-position: -50px 0;
+}
+
+.icon.feed {
+  background-position: 0 -25px;
+}
+
+.icon.twitter {
+  background-position: -25px -25px;
+}
+
+.icon.plus {
+  background-position: -50px -25px;
+}
