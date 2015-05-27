@@ -8,17 +8,15 @@
     text-shadow: none;
 }
 
-html {
+body {
+  min-width: 960px;
+  min-height: 800px;
+  font-family: 'Helvetica Neue', 'Segoe UI', 'Dejavu Sans', Arial, sans-serif;
   background: url('../images/bg.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
 	   -moz-background-size: cover;
 	     -o-background-size: cover;
 	        background-size: cover;
-}
-
-body {
-  min-width: 960px;
-  font-family: 'Ubuntu', arial, sans-serif;
 }
 
 body:before {
@@ -30,10 +28,10 @@ body:before {
   height: 10px;
   z-index: 100;
 
-  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.8);
-     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.8);
-       -o-box-shadow: 0 0 10px rgba(0,0,0,0.8);
-          box-shadow: 0 0 10px rgba(0,0,0,0.8);
+  -webkit-box-shadow: 0 0 25px rgba(0,0,0,0.9);
+     -moz-box-shadow: 0 0 25px rgba(0,0,0,0.9);
+       -o-box-shadow: 0 0 25px rgba(0,0,0,0.9);
+          box-shadow: 0 0 25px rgba(0,0,0,0.9);
 }
 
 .clearfix:before,
@@ -52,6 +50,7 @@ body:before {
 
 .quoted {
   quotes: '\201c' '\201d';
+  color: #55AF5A;
 }
 
 .quoted:before {
@@ -64,83 +63,47 @@ body:before {
 
 #bar {
   position: absolute;
-  right: 100px;
-  width: 300px;
-  height: 100%;
+  top: 47.7%;
+  left: 13%;
   color: #fefefe;
-  text-shadow: 1px 1px rgba(0,0,0,0.95);
-  background-color: rgba(0,0,0,0.5);
-}
-
-/*
-#bar:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -10px;
-  width: 10px;
-  height: 100%;
-
-  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.8);
-     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.8);
-       -o-box-shadow: 0 0 10px rgba(0,0,0,0.8);
-          box-shadow: 0 0 10px rgba(0,0,0,0.8);
-}
-*/
-
-#bar .sep {
-  width: 100%;
-  height: 3px;
-  background-color: rgba(255,255,255,0.25);
-}
-
-#bar .spacer {
-  height: 75px;
 }
 
 #info {
   width: 100%;
-  text-align: center;
-  background-color: rgba(0,0,0,0.5);
 }
 
 #info h1 {
   margin: 0;
-  font-size: 24px;
-  line-height: 75px;
-  letter-spacing: 1px;
-}
-
-#info h1 span {
-  color: #d33;
+  font-size: 4em;
+  line-height: 1em;
+  letter-spacing: -1px;
+  text-shadow: 1px 1px rgba(0,0,0,0.25);
 }
 
 #email {
   width: 100%;
   margin: 0 auto;
-  color: #333;
-  font: 18px/34px 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
-  text-shadow: 1px 1px rgba(0,0,0,0.25);
-  text-align: center;
-  background-color: rgba(200,200,180,0.5);
+  color: #444;
+  line-height: 1em;
+  letter-spacing: -1px;
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 1px 1px rgba(255,255,255,0.3);
+  text-align: right;
 }
 
 #menu {
-  width: 100%;
-  padding: 1em 0;
-  background-color: rgba(255,255,255,0.5);
-  -webkit-box-shadow: inset 0 0 10px -2px rgba(0,0,0,0.8);
+  margin-left: 5px;
 }
 
 #menu > ul {
-  width: 87px;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
 }
 
 #menu > ul > li {
-  float: left;
-  margin: 5px 0 0 5px;
+  display: inline-block;
+  margin: 0;
 }
 
 .icon {
