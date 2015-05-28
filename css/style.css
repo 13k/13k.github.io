@@ -64,7 +64,6 @@ body:before {
   color: #55AF5A;
 }
 
-
 #menu {
   position: relative;
   top: 15px;
@@ -81,7 +80,75 @@ body:before {
 }
 
 #menu > ul > li > a > .social {
-  font-size: 32px;
   color: #333;
+  font-size: 2em;
   text-shadow: 1px 1px rgba(255,255,255,0.4);
+}
+
+@media (max-height: 480px) {
+  #bar {
+    top: 10%;
+  }
+}
+
+@media (min-height: 480px) and (max-height: 768px) {
+  #bar {
+    top: 25%;
+  }
+  
+  #menu > ul > li > a > .social {
+    color: #e0e0e0;
+    text-shadow: 1px 1px rgba(0,0,0,0.4);
+  }
+}
+
+@media (max-width: 325px) {
+  #info h1 {
+    font-size: 4em;
+  }
+  
+  #menu {
+    margin: 0 2em;
+  }
+  
+  #menu > ul > li > a > .social {
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 325px) and (max-width: 480px) {
+  #info h1 {
+    font-size: 4em;
+  }
+  
+  #menu {
+    margin: 0 2em;
+  }
+  
+  #menu > ul > li > a > .social {
+    font-size: 4em;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 760px) {
+}
+
+@media (min-width: 760px) and (max-width: 1920px) {
+  #info h1 {
+    font-size: 4em;
+  }
+  
+  #menu > ul > li > a > .social {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 1920px) {
+  #info h1 {
+    font-size: 8em;
+  }
+  
+  #menu > ul > li > a > .social {
+    font-size: 4em;
+  }
 }
