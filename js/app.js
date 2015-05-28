@@ -4,6 +4,6 @@
         cipher = new CaesarCipher(),
         decoded = cipher.decode(encoded, 13);
 
-    $("#email").text(decoded);
+    $("#email").attr("href", "mailto:" + decoded);
   });
 })(window.jQuery);

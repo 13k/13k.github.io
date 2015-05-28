@@ -1,17 +1,15 @@
 ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 body {
-  min-width: 960px;
-  min-height: 800px;
-  font-family: 'Helvetica Neue', 'Segoe UI', 'Dejavu Sans', Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: url('../images/bg.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
 	   -moz-background-size: cover;
@@ -34,23 +32,8 @@ body:before {
           box-shadow: 0 0 25px rgba(0,0,0,0.9);
 }
 
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-.clearfix {
-  *zoom: 1;
-}
-
 .quoted {
   quotes: '\201c' '\201d';
-  color: #55AF5A;
 }
 
 .quoted:before {
@@ -63,37 +46,28 @@ body:before {
 
 #bar {
   position: absolute;
-  top: 47.7%;
-  left: 13%;
-  color: #fefefe;
-}
-
-#info {
+  top: 55%;
   width: 100%;
+  text-align: center;
 }
 
 #info h1 {
   margin: 0;
+  color: #FDFEF8;
   font-size: 4em;
-  line-height: 1em;
+  line-height: 1;
   letter-spacing: -1px;
-  text-shadow: 1px 1px rgba(0,0,0,0.25);
+  text-shadow: 1px 1px rgba(0,0,0,0.4);
 }
 
-#email {
-  width: 100%;
-  margin: 0 auto;
-  color: #444;
-  line-height: 1em;
-  letter-spacing: -1px;
-  font-size: 2em;
-  font-weight: bold;
-  text-shadow: 1px 1px rgba(255,255,255,0.3);
-  text-align: right;
+#info .quoted {
+  color: #55AF5A;
 }
+
 
 #menu {
-  margin-left: 5px;
+  position: relative;
+  top: 15px;
 }
 
 #menu > ul {
@@ -106,33 +80,8 @@ body:before {
   margin: 0;
 }
 
-.icon {
-  display: block;
-  width: 24px;
-  height: 24px;
-  background: transparent url('../images/icons.png') no-repeat;
-}
-
-.icon.github {
-  background-position: 0 0;
-}
-
-.icon.linkedin {
-  background-position: -25px 0;
-}
-
-.icon.skype {
-  background-position: -50px 0;
-}
-
-.icon.feed {
-  background-position: 0 -25px;
-}
-
-.icon.twitter {
-  background-position: -25px -25px;
-}
-
-.icon.plus {
-  background-position: -50px -25px;
+#menu > ul > li > a > .social {
+  font-size: 32px;
+  color: #333;
+  text-shadow: 1px 1px rgba(255,255,255,0.4);
 }
