@@ -1,0 +1,17 @@
+{
+  "name": "code.13k.dev",
+  "version": "0.1.0",
+  "description": "Code for code.13k.dev",
+  "main": "app.js",
+  "author": "13k",
+  "license": "WTFPL",
+  "devDependencies": {
+    "@biomejs/biome": "^1.4.1",
+    "prettier": "^3.1.1",
+    "stylelint": "^16.1.0",
+    "stylelint-config-idiomatic-order": "^10.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-prettier": "^5.0.0"
+  }
+}
